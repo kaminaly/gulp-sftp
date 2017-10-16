@@ -176,7 +176,10 @@ module.exports = function (options) {
         var connection_options = {
             host : options.host,
             port : options.port||22,
-            username : options.username
+            username : options.username,
+            algorithms: {
+                serverHostKey: ['ssh-rsa', 'ssh-dss']
+            }
         };
 
         if(options.password){
